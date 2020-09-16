@@ -50,7 +50,7 @@ app.use(session({
   cookie: {
     path: '/',
     httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000 // 单位 ms
+    maxAge: 24 * 60 * 60 * 1000  // 单位 ms
   },
   store: redisStore({
     all: `${REDIS_CONF.host}:${REDIS_CONF.port}`
@@ -59,9 +59,9 @@ app.use(session({
 
 // routes
 app.use(index.routes(), index.allowedMethods())
-app.use(userViewRouter.routes(), index.allowedMethods())
-app.use(userAPIRouter.routes(), index.allowedMethods())
-app.use(errorViewRouter.routes(), index.allowedMethods()) // 404 路由注册放到最后
+app.use(userViewRouter.routes(), userViewRouter.allowedMethods())
+app.use(userAPIRouter.routes(), userAPIRouter.allowedMethods())
+app.use(errorViewRouter.routes(), errorViewRouter.allowedMethods()) // 404 路由注册放到最后
 
 // error-handling
 app.on('error', (err, ctx) => {
