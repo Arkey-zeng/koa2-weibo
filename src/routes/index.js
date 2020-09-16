@@ -1,6 +1,7 @@
 const router = require('koa-router')()
+const { loginRedirect } = require('../middlewares/loginChecks')
 
-router.get('/', async (ctx, next) => {
+router.get('/',loginRedirect,  async (ctx, next) => {
   await ctx.render('index', {
     blogData: {
       isEmpty: false,

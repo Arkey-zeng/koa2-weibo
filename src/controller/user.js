@@ -68,7 +68,7 @@ async function login(ctx, userName, password) {
   }
 
   // 登录成功
-  if (ctx.session.userInfo === null) {
+  if (ctx.session.userInfo == null) {
     ctx.session.userInfo = userInfo
   }
 
