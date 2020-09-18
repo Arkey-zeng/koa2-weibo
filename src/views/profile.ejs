@@ -39,6 +39,12 @@
                     isMe: userData.isMe
                 });%>
             </div>
+
+            <!-- 粉丝 -->
+            <%- include('widgets/fans', {
+                count: userData.fansData.count,
+                userList: userData.fansData.list
+            })%>
         </div> <!-- 右侧结束 -->
     </div>
 </div>
