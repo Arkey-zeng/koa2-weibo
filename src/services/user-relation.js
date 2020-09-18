@@ -51,7 +51,7 @@ async function getFollowersByUser(userId) {
     include: [
       {
         model: User,
-        attributes: ['id', 'username', 'nickName', 'picture']
+        attributes: ['id', 'userName', 'nickName', 'picture']
       }
     ],
     where: {
